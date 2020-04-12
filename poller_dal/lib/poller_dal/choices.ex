@@ -32,4 +32,8 @@ defmodule PollerDal.Choices do
   def delete_choice(%Choice{} = choice) do
     Repo.delete(choice)
   end
+
+  defdelegate parties, to: Choice
+  defdelegate party_ids, to: Choice
+  defdelegate party_description(id), to: Choice
 end
